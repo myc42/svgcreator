@@ -1,0 +1,1 @@
+dans src / avatar face / eyes jai ajouter down left et right 

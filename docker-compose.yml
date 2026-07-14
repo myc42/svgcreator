@@ -1,0 +1,10 @@
+services:
+  app:
+    build: ./avataaars-generator
+    container_name: avataaars_gen
+    ports:
+      - "3000:3000"
+    volumes:
+      # On monte TOUT le dossier de votre librairie locale dans node_modules
+      # Cela écrase la version téléchargée par npm par VOTRE version immuable
+      - ./avataaars:/app/node_modules/avataaars
