@@ -121,39 +121,7 @@ export default class Avatar extends React.Component<Props> {
                 <Top>
                   <Accessories />
                 </Top>
-                
-                  <rect  className='table' x="0" y="280" width="1000" height="100" fill="#edf0f1"/>
-
 <path
-className='mac-clavier'
-  d="
-    M70 336
-    Q130 332 190 336
-    L205 351
-    Q205 356 200 356
-    H60
-    Q55 356 55 351
-    Z
-  "
-  fill="#d0d6dd"
-/>
-
-      <circle
-      className='wrist-right'
-  cx="210"
-  cy="285"
-  r="30"
-  fill="#D08B5B"
-/>
-<circle
- className='wrist-left'
-  cx="50"
-  cy="285"
-  r="30"
-  fill="#D08B5B"
-/>
-<path
-className='mac'
   d="
     M 70 230
     L 190 230
@@ -166,11 +134,19 @@ className='mac'
     Q 50 230 70 230
     Z
   "
-  fill="#bdc2c7"
-/> 
-
-
-
+  fill="#cccbda"
+/>           <circle
+  cx="220"
+  cy="290"
+  r="25"
+  fill="#D08B5B"
+/>
+<circle
+  cx="40"
+  cy="290"
+  r="25"
+  fill="#D08B5B"
+/>
 
               </g>
             </g>

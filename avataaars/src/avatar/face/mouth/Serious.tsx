@@ -8,9 +8,9 @@ export default class Serious extends React.Component {
       <g
         id='Mouth/Serious'
         transform='translate(2.000000, 52.000000)'
-        fill='#000000'
+        fill='#994636'
         fillOpacity='0.699999988'>
-        <rect id='Why-so-serious?' x='42' y='18' width='24' height='6' rx='3' />
+        <rect id='Why-so-serious?' x='49' y='12' width='12' height='8' rx='3' />
       </g>
     )
   }

@@ -28,6 +28,9 @@ import DefaultDown from './DefaultDown'
 import DefaultLeft from './DefaultLeft'
 import DefaultRight from './DefaultRight'
 import DefaultUp from './DefaultUp'
+import HappyBanana from './Happybanana'
+import DefaultUpRight from './DefaultUpRight'
+
 
 
 
@@ -39,7 +42,9 @@ export default class Eyes extends React.Component {
       <Selector defaultOption={Default} option={EyesOption}>
         <Close />
         <Cry />
+         <HappyBanana />
         <Default />
+          <DefaultUpRight />
           <DefaultDown />
                   <DefaultLeft />
                      <DefaultRight />

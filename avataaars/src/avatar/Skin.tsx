@@ -34,6 +34,8 @@ const Light = makeColor('Light', '#EDB98A')
 const Brown = makeColor('Brown', '#D08B5B')
 const DarkBrown = makeColor('DarkBrown', '#AE5D29')
 const Black = makeColor('Black', '#614335')
+const Olive = makeColor('Olive', '#D49363')
+
 
 export default class Skin extends React.Component<Props> {
   render() {
@@ -46,6 +48,8 @@ export default class Skin extends React.Component<Props> {
         <Brown maskID={this.props.maskID} />
         <DarkBrown maskID={this.props.maskID} />
         <Black maskID={this.props.maskID} />
+          <Olive maskID={this.props.maskID} />
+
       </Selector>
     )
   }
