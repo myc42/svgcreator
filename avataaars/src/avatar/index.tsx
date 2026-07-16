@@ -4,7 +4,8 @@ import { uniqueId } from 'lodash'
 import Accessories from './top/accessories'
 import Clothe from './clothes'
 import Face from './face'
-import Skin from './Skin'
+import HeadSkin from './HeadSkin'
+import BodySkin from './BodySkin'
 import Top from './top'
 
 export enum AvatarStyle {
@@ -21,21 +22,16 @@ export interface Props {
 export default class Avatar extends React.Component<Props> {
   private path1 = uniqueId('react-path-')
   private path2 = uniqueId('react-path-')
-  private path3 = uniqueId('react-path-')
   private mask1 = uniqueId('react-mask-')
   private mask2 = uniqueId('react-mask-')
-  private mask3 = uniqueId('react-mask-')
 
   render() {
-    const { path1, path2, path3, mask1, mask2, mask3 } = this
+    const { path1, path2, mask1, mask2 } = this
     const { avatarStyle } = this.props
     const circle = avatarStyle === AvatarStyle.Circle
-    {/*
-      les param du premier svg definisse la taille du pc <rect x="50" y="230" width="160" height="120" fill="#cccbda" rx="20" ry="20" />
-    */}
+
     return (
       <svg
-      
         style={this.props.style}
         className={this.props.className}
         width="300px"
@@ -51,12 +47,7 @@ export default class Avatar extends React.Component<Props> {
             d="M12,160 C12,226.27417 65.72583,280 132,280 C198.27417,280 252,226.27417 252,160 L264,160 L264,-1.42108547e-14 L-3.19744231e-14,-1.42108547e-14 L-3.19744231e-14,160 L12,160 Z"
             id={path2}
           />
-          <path
-            d="M124,144.610951 L124,163 L128,163 L128,163 C167.764502,163 200,195.235498 200,235 L200,244 L0,244 L0,235 C-4.86974701e-15,195.235498 32.235498,163 72,163 L72,163 L76,163 L76,144.610951 C58.7626345,136.422372 46.3722246,119.687011 44.3051388,99.8812385 C38.4803105,99.0577866 34,94.0521096 34,88 L34,74 C34,68.0540074 38.3245733,63.1180731 44,62.1659169 L44,56 L44,56 C44,25.072054 69.072054,5.68137151e-15 100,0 L100,0 L100,0 C130.927946,-5.68137151e-15 156,25.072054 156,56 L156,62.1659169 C161.675427,63.1180731 166,68.0540074 166,74 L166,88 C166,94.0521096 161.51969,99.0577866 155.694861,99.8812385 C153.627775,119.687011 141.237365,136.422372 124,144.610951 Z"
-            id={path3}
-          />
         </defs>
-
 
         <g
           id="Avataaar"
@@ -101,77 +92,71 @@ export default class Avatar extends React.Component<Props> {
                 strokeWidth="1"
                 fillRule="evenodd"
                 mask={'url(#' + mask2 + ')'}>
-                <g id="Body" transform="translate(32.000000, 36.000000)">
-                  <mask id={mask3} fill="white">
-                    <use xlinkHref={'#' + path3} />
-                  </mask>
-                  <use fill="#D0C6AC" xlinkHref={'#' + path3} />
-                  <Skin maskID={mask3} />
-                  <path
-                    d="M156,79 L156,102 C156,132.927946 130.927946,158 100,158 C69.072054,158 44,132.927946 44,102 L44,79 L44,94 C44,124.927946 69.072054,150 100,150 C130.927946,150 156,124.927946 156,94 L156,79 Z"
-                    id="Neck-Shadow"
-                    fillOpacity="0.100000001"
-                    fill="#000000"
-                    mask={'url(#' + mask3 + ')'}
-                  />
+                  
+                {/* corps */}
+                <BodySkin />
+
+                {/* tête */}
+                <g className="head-pivot">
+                  <g transform="translate(32 36)">
+                    <HeadSkin />
+                  </g>
+                  
+                  <Face />
+                  
+                  <Top>
+                    <Accessories />
+                  </Top>
                 </g>
 
                 <Clothe />
-                <Face />
-                <Top>
-                  <Accessories />
-                </Top>
                 
-                  <rect  className='table' x="0" y="280" width="1000" height="100" fill="#edf0f1"/>
+                <rect className='table' x="0" y="280" width="1000" height="100" fill="#edf0f1"/>
 
-<path
-className='mac-clavier'
-  d="
-    M70 336
-    Q130 332 190 336
-    L205 351
-    Q205 356 200 356
-    H60
-    Q55 356 55 351
-    Z
-  "
-  fill="#d0d6dd"
-/>
+                <path
+                  className='mac-clavier'
+                  d="
+                    M70 336
+                    Q130 332 190 336
+                    L205 351
+                    Q205 356 200 356
+                    H60
+                    Q55 356 55 351
+                    Z
+                  "
+                  fill="#d0d6dd"
+                />
 
-      <circle
-      className='wrist-right'
-  cx="210"
-  cy="285"
-  r="30"
-  fill="#D08B5B"
-/>
-<circle
- className='wrist-left'
-  cx="50"
-  cy="285"
-  r="30"
-  fill="#D08B5B"
-/>
-<path
-className='mac'
-  d="
-    M 70 230
-    L 190 230
-    Q 210 230 210 250
-    L 202 330
-    Q 202 350 182 350
-    L 78 350
-    Q 58 350 58 330
-    L 50 250
-    Q 50 230 70 230
-    Z
-  "
-  fill="#bdc2c7"
-/> 
-
-
-
-
+                <circle
+                  className='wrist-right'
+                  cx="210"
+                  cy="285"
+                  r="30"
+                  fill="#D08B5B"
+                />
+                <circle
+                  className='wrist-left'
+                  cx="50"
+                  cy="285"
+                  r="30"
+                  fill="#D08B5B"
+                />
+                <path
+                  className='mac'
+                  d="
+                    M 70 230
+                    L 190 230
+                    Q 210 230 210 250
+                    L 202 330
+                    Q 202 350 182 350
+                    L 78 350
+                    Q 58 350 58 330
+                    L 50 250
+                    Q 50 230 70 230
+                    Z
+                  "
+                  fill="#bdc2c7"
+                /> 
               </g>
             </g>
           </g>

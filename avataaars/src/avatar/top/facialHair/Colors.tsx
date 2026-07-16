@@ -28,7 +28,7 @@ function makeColor (name: string, color: string) {
 }
 
 const Auburn = makeColor('Auburn', '#A55728')
-const Black = makeColor('Black', '#2C1B18')
+const Black = makeColor('Black', '#3A2618')
 const Blonde = makeColor('Blonde', '#B58143')
 const BlondeGolden = makeColor('BlondeGolden', '#D6B370')
 const Brown = makeColor('Brown', '#724133')

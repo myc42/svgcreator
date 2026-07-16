@@ -13,6 +13,8 @@ import Tongue from './Tongue'
 import Twinkle from './Twinkle'
 import Normal from './Normal'
 import Banana from './Banana'
+import VeryHappy from './VeryHappy'
+
 
 import Vomit from './Vomit'
 import { MouthOption, Selector } from '../../../options'
@@ -25,6 +27,7 @@ export default class Mouth extends React.Component {
         <Default />
           <Normal />
                <Banana />
+                   <VeryHappy />
           
         <Disbelief />
         <Eating />
