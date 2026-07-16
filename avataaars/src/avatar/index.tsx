@@ -34,8 +34,8 @@ export default class Avatar extends React.Component<Props> {
       <svg
         style={this.props.style}
         className={this.props.className}
-        width="300px"
-        height="600px"
+        width="400px"
+        height="800px"
         viewBox="0 0 264 280"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +95,7 @@ export default class Avatar extends React.Component<Props> {
                   
                 {/* corps */}
                 <BodySkin />
-
+    <Clothe />
                 {/* tête */}
                 <g className="head-pivot">
                   <g transform="translate(32 36)">
@@ -109,7 +109,7 @@ export default class Avatar extends React.Component<Props> {
                   </Top>
                 </g>
 
-                <Clothe />
+            
                 
                 <rect className='table' x="0" y="280" width="1000" height="100" fill="#edf0f1"/>
 
